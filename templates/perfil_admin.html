@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprenesy</title>
+    <link rel="icon" href="/static/img/Logo2.jpeg" type="image/icon type">
+
+    <!-- Enlace a la fuente de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/ea06c7c0f7.js" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/static/styles/generales_admin.css">
+    <link rel="stylesheet" href="/static/styles/perfil_admin.css">
+    <link rel="stylesheet" href="{{url_for ('static', filename='styles/perfil_admin.css')}}">
+    <link rel="stylesheet" href="{{url_for ('static', filename='styles/generales_admin.css')}}">
+    <link rel="stylesheet" href="/static/styles/carga.css">
+    <link rel="stylesheet" href="/static/styles/whatssap.css">
+
+</head>
+
+<body>
+    <header id="cabecera">
+        <div id="cabeza"></div>
+    </header>
+
+    <main>
+        <div id="sidebar">
+            <div class="toggle-btn">
+                <span><i class="bi bi-list"></i></span>
+            </div>
+            <ul class="toggle-info">
+                <li>
+                    <div class="tigle-img">
+                        <img style="height: 150px; width: 150px; margin-left: 50px;"
+                            src="{{ url_for('static', filename='img/logo_Emprenesy.png') }}" alt="logo emprenesy"
+                            class="logo">
+                    </div>
+                </li>
+                <li><a href="{{ url_for('admin.index_admin') }}">Dashboard</a></li>
+                <li><a href="{{url_for('admin.perfil_admin')}}">Perfil</a></li>
+                <li><a href="{{url_for('admin.indexPrincipal')}}">Inicio</a></li>
+                <li><a href="{{url_for('admin.nosotrosEmprenesy')}}">Nosotros</a></li>
+            </ul>
+        </div>
+        <div class="container__perfil">
+
+            <div class="perfil__portada">
+                <div class="portada__foto">
+                    <img src="{{foto_portada}}" alt="Portada de perfil">
+                </div>
+                <div class="portada__boton">
+                    <form action="/admin/subir_portada" method="POST" enctype="multipart/form-data">
+                        <input type="file" id="file-upload-button" name="fotoPortada" style="display:none; "
+                            onchange="this.form.submit()">
+                        <label for="file-upload-button" class="portada_btn"><i class="fa-solid fa-camera-retro"></i>
+                            Editar portada</label>
+                    </form>
+                </div>
+            </div>
+            <div class="perfil__contenido">
+                <div class="contenido__datos">
+                    <div class="perfil__foto">
+                        <div class="perfil">
+                            <img src="{{foto_perfil}}" alt="Foto de perfil">
+                        </div>
+
+                        <div class="pefil__boton">
+                            <form action="/admin/subir_fotoPerfil" method="POST" enctype="multipart/form-data">
+                                <input type="file" id="perfil" name="fotoPerfil" style="display:none;"
+                                    onchange="this.form.submit()">
+                                <label for="perfil" class="perfil_icon"><i class="fa-solid fa-camera-retro"></i></label>
+                            </form>
+                        </div>
+                        <h3 class="perfil__name">{{nombre_admin}} {{apellido_admin}}</h3>
+                    </div>
+
+                    <div class="datos__detalles">
+                        <h3>Detalles</h3>
+                        <h4><i class="fa-solid fa-location-dot"></i>{{ciudad if ciudad else 'No disponible' }}</h4>
+                        <h4><i class="fa-solid fa-envelope"></i>{{correo_admin}}</h4>
+                        <h4>
+                            <i class="fa-solid fa-globe"></i>{{ sitioWeb if sitioWeb else 'No disponible' }}
+                        </h4>
+                        <h4>
+                            <i class="fa-solid fa-blog"></i>{{ blog if blog else 'No disponible' }}</h4>
+                        <a href="{{url_for('admin.editarPerfilAdmin', id=admin_id)}}" class="detalles_btnPer">Editar detalles</a>
+                    </div>
+                    <div class="datos__acerca">
+                        <h3>Acerca de mi</h3>
+                        <p class="textoAcerca">{{descripcionAcerca if descripcionAcerca else 'Breve descripción sobre mí'}}</p>
+                    </div>
+                    <div class="datos_fotos">
+                        <h3>Fotos</h3>
+                        <div class="fotos__galeria" id="galeria"></div>
+                    </div>
+                </div>
+                <div class="perfil__opciones">
+                    <div class="opciones">
+                        <a href="#opciones__resultado" onclick="resenasAdmin()">Mis reseñas</a>
+                        <a href="#opciones__resultado" onclick="Myphotos()">Mis fotos</a>
+                        <a href="{{url_for('admin.favoritosAdmin')}}">Favoritos</a>
+
+                    </div>
+                    <div id="opciones__resultado" class="result"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="data-container" data-perfil-url="{{ url_for('admin.perfil_admin') }}" data-admin-id="{{ admin_id }}"
+            style="display: none;"></div>
+        <div id="url" style="display: none;">
+            <a id="url_dash" data-url="{{ url_for('admin.index_admin') }}"></a>
+            <a id="url_editarPerfil" data-url="{{ url_for('admin.editarPerfilAdmin', id=admin_id) }}"></a>
+            <a id="url_cerrarSesion" data-url="{{url_for('usuarios.logout')}}"></a>
+        </div>
+
+        <!--WHATSAPP BUTTON-->
+        <div class="nav-bottom">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <div class="popup-whatsapp fadeIn">
+                <div class="content-whatsapp -top">
+                    <button type="button" class="closePopup">
+                        <i class="material-icons icon-font-color">close</i>
+                    </button>
+                    <p> <img src="{{ url_for('static', filename='img/logo_Emprenesy.png') }}" width="35"
+                            id="image-whatssap">
+                        Hola, ¿cómo podemos ayudate? </p>
+                </div>
+
+                <div class="content-whatsapp -bottom">
+                    <input class="whats-input" id="whats-in" type="text" Placeholder="Enviar mensaje..." />
+                    <button class="send-msPopup" id="send-btn" type="button">
+                        <i class="material-icons icon-font-color--black">send</i>
+                    </button>
+                </div>
+
+            </div>
+
+            <button type="button" id="whats-openPopup" class="whatsapp-button">
+                <div class="float">
+                    <i class="fa fa-whatsapp my-float"></i>
+                </div>
+            </button>
+
+            <div class="circle-anime"></div>
+        </div>
+        <div id="loader-container1" class="loader-container">
+            <img src="/static/carga/stylesheet (2).gif">
+        </div>
+    
+    </main>
+
+    <script src="/static/js/generales_admin.js"></script>
+    <script src="/static/js/perfil_admin.js"></script>
+    <script src="/static/js/buscadorAdmin.js"></script>
+    <script src="/static/js/carga.js"></script>
+    <script src="/static/js/whattssap.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+
+
+
+</body>
+
+</html>

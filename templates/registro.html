@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/registro.css">
+    <link rel="stylesheet" href="{{url_for ('static', filename='styles/registro.css')}}">
+    <title>Formulario Registro</title>
+    <link rel="icon" href="{{url_for ('static', filename='img/Logo2.jpeg')}}" type="image/icon type">
+    <link rel="stylesheet" href="/static/styles/carga.css">
+</head>
+
+<body>
+    <div id="loader-container2" class="loader-conta">
+        <img src="/static/carga/download (1).gif">
+    </div>
+    <h4 style="text-align: center; color: white; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 
+    'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 30px; margin: 20px;">Registrate</h4>
+    <div class="login-container">
+
+        <form action="" method="post" id="registroForm">
+            <div class="input-group">
+                <label for="rol">Escoge tu rol</label>
+                <select name="rol" id="rol" class="controls">
+                    <option value="">Seleccionar</option>
+                    <option value="usuario">Usuario</option>
+                    <option value="Administrador">Administrador</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="nombres">Nombres:</label>
+                <input class="controls" type="text" id="nombres" name="nombres">
+            </div>
+            <div class="input-group">
+                <label for="apellidos">Apellidos:</label>
+                <input class="controls" type="text" id="apellidos" name="apellidos">
+            </div>
+            <div class="input-group">
+                <label for="tel">Número telefónico </label>
+                <input class="controls" type="number" name="tel" id="tel">
+            </div>
+            <div class="input-group">
+                <label for="fechaNac">Fecha de Nacimiento:</label>
+                <input class="controls" type="date" name="fechaNac" id="fechaNac" required>
+            </div>
+            <div class="input-group">
+                <label for="correo">Correo eletrónico</label>
+                <input class="controls" type="email" name="correo" id="correo" required>
+            </div>
+            <div class="input-group">
+                <label for="contrasena">Contraseña</label>
+                <input class="controls" type="password" name="contrasena" id="contrasena">
+            </div>
+            <div class="input-group">
+                <label for="confirmar_contrasena">Confirmar contrasena</label>
+                <input class="controls" type="password" name="confirmar_contrasena" id="confirmar_contrasena">
+            </div>
+            <div class="input-group">
+
+                <input class="botons" type="submit" value="Registrar">
+
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../static/js/registro.js"></script>
+    <script src="../static/js/carga.js"></script>
+</body>
+
+</html>

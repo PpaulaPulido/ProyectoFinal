@@ -1,0 +1,885 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,500;1,6..12,500&family=Poppins:wght@300;400&family=Roboto+Slab:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Roboto Slab', serif;
+
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/***************estilos del main publicaciones******************/
+body {
+    background-image: linear-gradient(135deg, #213859 0%, #2c5d9d 21%, #748ffc 57%, #a755f9 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container_publicaciones {
+    height: fit-content;
+    position: relative;
+    top: 100px;
+    z-index: 1;
+}
+
+.publicaciones_contenido {
+    padding: 20px 30px;
+    margin: 0 20px;
+
+}
+
+.publicaciones_contenido .button {
+    width: fit-content;
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    gap: 0.4rem;
+    border: none;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    text-shadow: 2px 2px 3px rgb(73, 34, 145);
+    background: linear-gradient(15deg, #04a8a8, #1fbfbf, #3cd6d6, #5bf0f0, #8bffff, #5bf0f0, #3cd6d6, #1fbfbf, #04a8a8) no-repeat;
+    background-size: 300%;
+    background-position: left center;
+    transition: 0.3s ease;
+    color: #fff;
+
+}
+
+.button:hover {
+    background-size: 320%;
+    background-position: right center;
+}
+
+.publicaciones_contenido .btn_pu a {
+    color: #fff;
+    font-size: 18px;
+}
+
+.publicaciones_contenido .btn_pu:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.contenido__info {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 20px 0 100px 0;
+    border-radius: 8px;
+    height: fit-content;
+    padding: 10px 20px;
+}
+
+.contenido__info .info_title {
+    color: #fff;
+    text-align: center;
+    margin: 15px 0;
+}
+
+/**********Estilos contenedores publicaciones************/
+#publicaciones__form {
+    transition: all 800ms linear;
+    margin-left: 0;
+    width: 100%;
+    overflow-x: hidden;
+
+}
+
+#publicaciones__form.active {
+    margin-left: 150px;
+    width: calc(100% - 100px);
+}
+
+.container_pub {
+    background: #fff;
+    height: fit-content;
+    min-height: 250px;
+    margin: 30px 15px;
+    border-radius: 5px;
+    padding: 40px;
+
+}
+
+.container_vac {
+    width: 50%;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.div_icon {
+    background-color: #336baf;
+    padding: 10px;
+    margin: 0 auto;
+    width: 77px;
+    height: 75px;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div_icon .icon {
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+.container_vac h2 {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #336baf;
+    text-align: center;
+}
+
+/****************************Estilos de contenedor de publicaciones de eventos*****************************************/
+.containerPub {
+    padding: 10px;
+
+}
+
+.tituloE {
+    color: #336baf;
+    font-size: 24px;
+}
+
+.containerPub .publicacionIndex {
+    background-image: linear-gradient(135deg, #c2d6f3 0%, #9775fa 100%, #cbd3f3 100%, #c999f9 100%);
+    color: #480183;
+    border-radius: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    margin: 15px 0;
+
+}
+
+.publicacionIndex .publicacionTitle {
+    margin: 0 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.publicacionIndex .publicacionTipoIndex {
+    font-size: 18px;
+    margin: 0 15px;
+}
+
+.publicacionIndex .divImgPub {
+    width: 150px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.divImgPub img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.containerPub .divBotonesPub {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divBotonesPub .botonesPub {
+    padding: 10px 5px;
+    margin: 0 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 200px;
+    text-align: center;
+    font-weight: 700;
+    overflow-x: hidden;
+    transition: width 0.8s ease;
+}
+
+.divBotonesPub .btnEdit {
+    background-color: #fff;
+    color: #336baf;
+}
+
+.divBotonesPub .btnEdit:hover {
+    background-color: #017092;
+    color: #fff;
+}
+
+.divBotonesPub .btnEli {
+    background-color: rgb(248, 66, 66);
+    color: #fff;
+}
+
+.divBotonesPub .btnEli:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+.botonesPub.active {
+    width: calc(100% - 7px);
+    transition: width 0.8s ease;
+}
+
+/*******************************Estilos de tipo publicaciones********************************/
+.tipo_publicacion {
+    width: 90%;
+    min-height: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.card {
+    position: relative;
+    width: 220px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.container_card:nth-of-type(1) .card {
+    background-image: url('https://blogskystorage.s3.amazonaws.com/2024/03/skyairline_skyairline_image_55-1536x1024.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.container_card:nth-of-type(2) .card {
+    background-image: url('https://www.canecas.com.co/images/Noticias_2022/emprendimientos-ecoamigables-sostenibles.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.container_card:nth-of-type(3) .card {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQerpYDBB0-lt_3uU1SYI2LKP9PlNYf2sCjKRZEFzXQZA&s');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.card::before,
+.card::after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: rgb(183, 95, 255);
+    transition: all 0.5s;
+}
+
+.card::before {
+    top: 0;
+    right: 0;
+    border-radius: 0 15px 0 100%;
+}
+
+.card::after {
+    bottom: 0;
+    left: 0;
+    border-radius: 0 100% 0 15px;
+}
+
+.card:hover::before,
+.card:hover:after {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    transition: all 0.5s;
+}
+
+.container_card:nth-of-type(1) .card:hover:after {
+    content: "Publicar eventos";
+}
+
+.container_card:nth-of-type(2) .card:hover:after {
+    content: "Publicar emprendimientos";
+}
+
+.container_card:nth-of-type(3) .card:hover:after {
+    content: "Publicar restaurantes";
+}
+
+
+/********************Estilos del html publicaciones part 1************************/
+#publicaciones {
+    transition: all 800ms linear;
+    margin-left: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#publicaciones.active {
+    margin-left: 220px;
+    width: calc(100% - 250px);
+}
+
+.form_detalles_container {
+    display: grid;
+    grid-template-columns: repeat(2, 600px);
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido__detalles {
+    margin: 20px auto 100px auto;
+    border-radius: 8px;
+    height: fit-content;
+    padding: 10px 20px;
+}
+
+.contenido__title h2 {
+    color: #fff;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.info_detalles {
+    margin: 25px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    border-radius: 10px;
+
+}
+
+.detalle__sitio h3 {
+    color: #fff;
+    margin: 8px 4px -5px 0;
+    font-size: 28px;
+    text-align: center;
+}
+
+.detalle__sitio {
+    margin: 0 auto;
+    padding: 20px;
+    width: 80%;
+}
+
+input[type="file"].logo {
+    border: none;
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    outline: none;
+    background-color: #04ebeb;
+
+}
+
+input[type="file"].logo::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+input[type="file"].logo::before {
+    content: 'Seleccionar archivo';
+    display: inline-block;
+    background: #04ebeb;
+    color: #090233;
+    padding: 1px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+input[type="file"].logo:focus::before {
+    background: #04ebeb;
+    color: #fff;
+}
+
+select {
+    border: none;
+    padding: 5px;
+    border-radius: 8px;
+    width: 90%;
+}
+
+@media only screen and (max-width:767px) {
+    .detalle__sitio {
+        width: 680px;
+
+    }
+
+    textarea {
+        width: 380px;
+    }
+
+    .info_detalles {
+        width: 420px;
+    }
+
+    #siguiente2 {
+        width: 60%;
+    }
+
+    #botones {
+        display: flex;
+        width: 100%;
+
+    }
+
+    #ingresa_ubi {
+        padding: 3%;
+        text-align: center;
+    }
+
+
+
+}
+
+@media only screen and (min-width:768px) and (max-width:1023px) {
+    .detalle__sitio {
+        width: 800px;
+
+    }
+
+    textarea {
+        width: 460px;
+    }
+
+    .info_detalles {
+        width: 500px;
+    }
+
+    #siguiente2 {
+        width: 60%;
+    }
+
+    #ingresa_ubi {
+        padding: 3%;
+        text-align: center;
+    }
+
+    #botones {
+        display: flex;
+        width: 100%;
+
+    }
+
+}
+
+@media only screen and (min-width:1024px) {
+    .detalle__sitio {
+        width: 80%;
+
+    }
+
+    textarea {
+        width: 110%;
+        height: 55px;
+    }
+
+    #formularioLocationRes {
+        display: block;
+
+    }
+
+    #formularioLocationEm {
+        display: block;
+
+    }
+
+    #siguiente2 {
+        width: 80%;
+
+    }
+
+    #siguiente22 {
+
+        padding: 0px;
+    }
+
+    #siguiente3 {
+        padding: 0px;
+        width: 80%;
+    }
+
+    #siguiente4 {
+        padding: 0;
+    }
+
+    #botones {
+        display: flex;
+        width: 70%;
+
+
+    }
+
+}
+
+.detalle__sitio label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.detalle__sitio input {
+    border: none;
+    border-radius: 6px;
+    width: 90%;
+    height: 30px;
+    padding: 6px;
+}
+
+.detalle__sitio input::placeholder {
+    color: #d4cfcf;
+}
+
+.detalle__sitio textarea::placeholder {
+    color: #d4cfcf;
+
+
+}
+
+.file-upload-btn {
+    background-color: #24ddd7;
+    border: none;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    width: 60%;
+    color: #fff;
+    font-size: 14px;
+}
+
+.detalle__sitio select[name='restaurante'] {
+    border: none;
+    width: 60%;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #051248;
+}
+
+.detalle__sitio textarea {
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.boton_form .btn__form,
+#btn_regresar,
+#btn_regresarRes,
+#btn_regresarEm {
+    margin: 0 auto 20px auto;
+    width: 80%;
+    padding: 3px;
+    height: 40px;
+    color: #051248;
+    font-size: 18px;
+    background-color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+.boton_form .btn__form:hover,
+#btn_regresar:hover,
+#btn_regresarEm:hover {
+    background-color: #3d77ba;
+    color: #fff;
+}
+
+#btn_regresarRes:hover {
+    background-color: #3d77ba;
+    color: #fff;
+}
+
+#btn_dir:hover {
+    background-color: #3d77ba;
+    color: #fff;
+}
+
+/************************** estilos de publicaciones res 1**********************************/
+.detalle__sitioImg {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 10px;
+    margin: 15px auto 20px auto;
+    place-items: center;
+    width: 80%;
+
+}
+
+.sitio__img {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.detalles__btn {
+    border: solid;
+}
+
+.galeria {
+    background-color: #24ddd7;
+    border: none;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+}
+
+/*******************************************Estilos de publicaciones eventos***************************************/
+#redTiktok {
+    margin-top: 30px;
+}
+
+/*estilos del mapa*/
+.detalle_btn {
+    margin-top: 30px;
+}
+
+#btn_dir {
+    color: #fff;
+    background-color: #24ddd7;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-left: 100px;
+}
+
+#btn_dir:hover {
+    background-color: #036e6b;
+}
+
+.error_message {
+    color: #Fff;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-right: 40px;
+}
+
+#geocode #map {
+    display: block;
+    width: 95%;
+    height: 500px;
+    margin: 20px auto -20px 38px;
+    background-color: rgb(226, 239, 248);
+    border: 7px solid #336baf;
+    border-radius: 5px;
+
+
+}
+
+.detalles__ubicacion {
+    display: grid;
+    grid-template-columns: 800px 1fr;
+    margin-bottom: 40px;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+/*estilos del sweatalert*/
+.border-blue {
+    border: 3px solid #213859 !important;
+    box-shadow: 0 0 15px #fff;
+}
+.swal2-success-ring{
+    border: 3px solid #213859 !important;
+}
+.swal2-title{
+    color: #050047;
+    font-size: 25px;
+}
+.custom-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+@media only screen and (max-width: 920px) {
+    .publicaciones_contenido {
+        padding: 20px 5px;
+    }
+
+    #publicaciones {
+        transition: none;
+        margin-left: 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    #publicaciones.active {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .container_pub {
+        padding: 5px;
+    }
+
+    .container_vac {
+        width: 80%;
+        margin-top: 10px;
+    }
+
+    .tituloE {
+        margin: 10px auto;
+        text-align: center;
+        width: 90%;
+    }
+
+    .containerPub .publicacionIndex {
+        grid-template-columns: none;
+        justify-content: center;
+    }
+
+    .publicacionIndex .publicacionTitle {
+        margin: 15px 5px;
+    }
+
+    .publicacionIndex .publicacionTipoIndex {
+        margin: 0 2px;
+    }
+
+    .publicacionIndex .divImgPub {
+        margin: 15px auto;
+    }
+
+    .containerPub .divBotonesPub {
+        display: block;
+        flex-direction: column;
+        margin: 15px auto;
+    }
+
+    .tipo_publicacion {
+        grid-template-columns: none;
+    }
+
+    .card {
+        margin-bottom: 30px;
+    }
+
+    .container_card:nth-of-type(3) .card {
+        margin-bottom: 80px;
+    }
+
+    #publicaciones__form {
+        transition: none;
+        margin-left: 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    #publicaciones__form.active {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .form_detalles_container {
+        grid-template-columns: none;
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenido__detalles {
+        padding: 10px 5px;
+    }
+
+    .info_detalles {
+        width: 100%;
+        margin: 10px auto 30px auto;
+
+    }
+
+    .detalle__sitio {
+        width: 95%;
+    }
+
+    .detalle__sitio h3 {
+        margin: 5px auto;
+    }
+
+    .detalle__sitio textarea {
+        width: 90%;
+    }
+
+    .detalles__ubicacion {
+        display: block;
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    #geocode #map {
+        width: 100%;
+        margin: 0;
+    }
+
+    .boton_form .btn__form,
+    #btn_regresar,
+    #btn_regresarRes,
+    #btn_regresarEm {
+        width: 100%;
+    }
+}

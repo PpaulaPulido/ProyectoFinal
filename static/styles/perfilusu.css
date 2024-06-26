@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,500;1,6..12,500&family=Poppins:wght@300;400&family=Roboto+Slab:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Roboto Slab", serif;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/******************************Estilos del container perfil***************************************/
+body {
+  background-image: linear-gradient(135deg,
+      #213859 0%,
+      #2c5d9d 21%,
+      #748ffc 57%,
+      #a755f9 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.container__perfil {
+  padding: 10px;
+}
+
+.portada__foto {
+  width: 90%;
+  height: 450px;
+  margin: 60px auto 0 auto;
+  overflow: hidden;
+}
+
+.portada__foto img {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.portada__boton {
+  position: relative;
+  margin-left: 940px;
+  bottom: 65px;
+}
+
+.portada_btn {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.portada_btn i {
+  margin-right: 10px;
+}
+
+.perfil__contenido {
+  background-color: #f7f2f2;
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  margin-top: -45px;
+  padding: 20px;
+}
+
+.perfil__foto {
+  position: relative;
+  bottom: 150px;
+  margin-left: 20px;
+}
+
+.perfil {
+  width: 250px;
+  height: 250px;
+}
+
+.perfil_icon i {
+  font-size: 25px;
+  background-color: #2c5d9d;
+  border-radius: 50%;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  left: 200px;
+  bottom: 60px;
+}
+
+.perfil img {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.perfil__foto h3 {
+  color: #2c5d9d;
+  margin-left: 50px;
+}
+
+.perfil__name {
+  width: 300px;
+  line-height: 1.5;
+  margin-bottom: -20px;
+}
+
+.datos__detalles {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  margin: -100px auto 0 auto;
+  border-radius: 8px;
+  padding-left: 40px;
+}
+
+.datos__detalles i {
+  margin-right: 10px;
+}
+
+.datos__detalles h4 {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.detalles_btnPer {
+  color: #fff;
+  background-color: #2c5d9d;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  font-size: 18px;
+  margin: 40px auto 50px auto;
+}
+
+.detalles_btnPer:hover {
+  background-color: #0c4ca0;
+}
+
+.datos__acerca {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  border-radius: 8px;
+  padding-left: 40px;
+  margin: 50px 0 0 40px;
+  min-height: 200px;
+  height: fit-content;
+}
+
+.datos__acerca .textoAcerca {
+  margin-top: 20px;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+.datos_fotos {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  min-height: 300px;
+  height: auto;
+  padding: 20px;
+  padding-left: 20px;
+  width: 87%;
+  border-radius: 8px;
+  margin: 50px auto;
+}
+
+.datos_fotos h3 {
+  margin: 10px 15px 15px;
+}
+
+.fotos__galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.fotos__galeria .imgGaleria {
+  width: 100px;
+  height: auto;
+  margin: 5px 10px;
+  overflow: hidden;
+}
+
+.perfil__opciones {
+  padding: 10px;
+  width: 90%;
+  margin-left: 50px;
+}
+
+.opciones {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.opciones a {
+  color: #0c4ca0;
+  width: 160px;
+  padding: 5px 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.opciones a:hover {
+  border-bottom: 2px solid #0196aa;
+}
+
+#opciones__resultado {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  margin: 30px 0;
+  border-radius: 8px;
+}
+
+/*************************Estilos cuando no hay galeria fotos************************************/
+.containerPhoto {
+  padding: 20px;
+}
+
+.iconContainer {
+  background-color: #3f8d8d;
+  padding: 30px;
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.iconContainer i {
+  font-size: 30px;
+  color: #fff;
+}
+
+.containerPhoto .textPhoto {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 22px;
+  color: #3f8d8d;
+}
+
+/**************************Estilos del contenedor mis fotos****************************************/
+.result {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  padding: 20px;
+}
+
+.result .imgPhotos {
+  width: 230px;
+  height: auto;
+  margin: 10px auto;
+}
+
+.containerMyPhotos {
+  min-height: 600px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.MyphotosImg {
+  height: 300px;
+  width: 300px;
+}
+
+.imgPhoto {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.textPhotoImg {
+  margin: 30px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #0c4ca0;
+}
+
+@media only screen and (max-width: 920px) {
+  .portada__foto {
+    width: 95%;
+    height: 300px;
+  }
+
+  .perfil__name {
+    width: 250px;
+  }
+
+  .perfil__contenido {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr;
+    width: 95%;
+    align-items: center;
+  }
+
+  .perfil {
+    width: 150px;
+    height: 150px;
+  }
+
+  .perfil__foto {
+    bottom: 100px;
+    margin-left: 0;
+  }
+
+  .portada__boton {
+    margin-left: 210px;
+    bottom: 60px;
+  }
+
+  .portada_btn {
+    font-size: 15px;
+    text-align: center;
+    width: 90%;
+    padding: 5px;
+  }
+
+  .perfil_icon i {
+    left: 100px;
+    bottom: 45px;
+  }
+
+  .perfil__name {
+    margin-bottom: 30px;
+  }
+
+  .contenido__datos {
+    width: 70%;
+  }
+
+  .datos__detalles {
+    width: 100%;
+    margin-left: 15px;
+  }
+
+  .datos__acerca {
+    width: 100%;
+    margin: 50px auto 0 15px;
+  }
+
+  .datos_fotos {
+    width: 100%;
+    margin: 50px auto 0 15px;
+  }
+  .perfil__opciones {
+    width: 75%;
+    margin-left: 12px;
+    margin-right: 5px;
+    margin-top: -500px;
+  }
+  .result {
+    min-height: 400px;
+    grid-template-columns: none;
+  }
+  .containerMyPhotos{
+    text-align: center;
+    min-height: 300px;
+  }
+
+  .MyphotosImg {
+    height: 200px;
+    width: 200px;
+  }
+
+
+}

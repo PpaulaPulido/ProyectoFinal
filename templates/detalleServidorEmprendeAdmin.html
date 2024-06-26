@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Medidas query David -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="icon" href="{{url_for ('static', filename='img/Logo2.jpeg')}}" type="image/icon type">
+    <link rel="stylesheet" href="/static/styles/generalesPrincipal_admin.css">
+    <link rel="stylesheet" href="/static/styles/detalles.css">
+    <link rel="stylesheet" href="/static/styles/whatssap.css">
+
+    <link rel="stylesheet" href="{{url_for ('static', filename='styles/detalles.css')}}">
+    <link rel="stylesheet" href="{{url_for ('static', filename='styles/generalesPrincipal_admin.css')}}">
+   
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+</head>
+
+<body>
+    <header id="cabecera">
+        <div id="cabeza">
+            <div class="logoedit">
+                <img style="height: 80px; width: 80px; margin-left: 35px;" src="{{ url_for('static', filename='img/logo_Emprenesy.png') }}" alt="logo emprenesy" class="logo">
+            </div>
+        </div>
+
+        <div id="menuLateralToggle">
+            <div id="toggle">
+                <div class="nav-list2" id="nav-list2">
+                    <div class="menu-toggle" id="mobile-menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <ul class="menu-opciones">
+                        <li><i class="fa-solid fa-x" id="cerrar"></i></li>
+                        <li><img src="{{ url_for('static', filename='img/logo_Emprenesy.png') }}" alt="logo emprenesy"
+                                class="logoToggle"></li>
+                        <li><a href="{{url_for('admin.nosotrosEmprenesy')}}">Sobre Nosotros</a></li>
+                        <li><a href="{{url_for('admin.indexPrincipal')}}">Inicio</a></li>
+                        <li><a href="{{url_for('admin.favoritosAdmin')}}">Mis favoritos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+
+        <div id="enlaces" style="display: none;">
+            <a id="url_nosotros" data-url="{{url_for('admin.nosotrosEmprenesy')}}"></a>
+            <a id="url_index" data-url="{{url_for('admin.indexPrincipal')}}"></a>
+            <a id="url_favoritos" data-url="{{url_for('admin.favoritosAdmin')}}"></a>
+            <a id="url_perfil" data-url="{{url_for('admin.perfil_admin')}}"></a>
+            <a id="url_editarPerfil" data-url="{{ url_for('admin.editarPerfilAdmin', id=admin_id) }}"></a>
+            <a id="url_dashboard" data-url="{{ url_for('admin.index_admin') }}"></a>
+            <a id="url_cerrarSesion" data-url="{{url_for('usuarios.logout')}}"></a>
+        </div>
+        
+        <div class="wrapper">
+            <h2 class="title_empren" id="title"></h2>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <div class="container_slider">
+            <div class="row">
+                <div class="col-xs-11 col-md-10 col-centered">
+
+                    <div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi"
+                        data-interval="2500">
+                        <div class="carousel-inner"></div>
+
+                        <!-- Controls -->
+                        <div class="left carousel-control">
+                            <a href="#carousel" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </div>
+                        <div class="right carousel-control">
+                            <a href="#carousel" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <section class="contenedor_principal">
+            <div class="info__detalles">
+                <div class="detalles info">
+                    <h2>Detalles</h2>
+                    <h3>Tipo de Negocio</h3>
+                    <p id="negocio"></p>
+                    <h3>Horario de atención</h3>
+                    <p id="horarioText"></p>
+                    <p id="horario"></p>
+                    <div class="contenedor_button">
+                        <button class="btn_info" onclick="popup_emprendimientos()">Nuestros Productos</button>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="contenedor_info">
+                        <h2>Información</h2>
+                        <h3>Sitio Web</h3>
+                        <a id="web">Clic aquí para visitar el sitio web.</a>
+                        <h3>Correo electrónico</h3>
+                        <p id="correo"></p>
+                        <h3>Contacto</h3>
+                        <p id="contacto"></p>
+                        <h3>Redes Sociales</h3>
+                        <div class="redes_sociales">
+                            <a id="red1">
+                                <img src="{{ url_for('static', filename='img/instagram1.png ') }}" alt="instagram">
+                            </a>
+                            <a id="red2">
+                                <img src="{{ url_for('static', filename='img/tik-tok.png ') }}" alt="tik tok">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container_ubicacion">
+                <h2>Ubicación</h2>
+                <div class="detalles__ubicacion">
+                    <div class="mapa" id="geocode">
+                        <div id="map"></div>
+                        <div id="panel"></div>
+                    </div>
+                    <div class="ubicacion">
+                        <h3>éntranos en: </h3>
+                        <ul id="location"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="calificacionRes">
+            <div class="divCalificacion">
+                <h2>Calificaciones y opiniones</h2>
+                <h3 id="nombreEmpre"></h3>
+                <h5 id="nombreAdmin"></h5>
+                <div id="rating"></div>
+                <hr>
+                <p class="textoCalificacion">Todavía no hay suficientes calificaciones. Sé uno de los primeros en
+                    escribir una opinión</p>
+                <a href="#" class="btn_opinion">Escribe una opinión</a>
+            </div>
+        </div>
+
+        <!--WHATSAPP BUTTON-->
+        <div class="nav-bottom">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <div class="popup-whatsapp fadeIn">
+                <div class="content-whatsapp -top">
+                    <button type="button" class="closePopup">
+                        <i class="material-icons icon-font-color">close</i>
+                    </button>
+                    <p> <img src="{{ url_for('static', filename='img/logo_Emprenesy.png') }}" width="35"
+                            id="image-whatssap">
+                        Hola, ¿cómo podemos ayudate? </p>
+                </div>
+
+                <div class="content-whatsapp -bottom">
+                    <input class="whats-input" id="whats-in" type="text" Placeholder="Enviar mensaje..." />
+                    <button class="send-msPopup" id="send-btn" type="button">
+                        <i class="material-icons icon-font-color--black">send</i>
+                    </button>
+                </div>
+
+            </div>
+
+            <button type="button" id="whats-openPopup" class="whatsapp-button">
+                <div class="float">
+                    <i class="fa fa-whatsapp my-float"></i>
+                </div>
+            </button>
+
+            <div class="circle-anime"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="principal_footer">
+            <div>
+                <svg class="olas" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="vector-olas"
+                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="efecto">
+                        <use xlink:href="#vector-olas" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                        <use xlink:href="#vector-olas" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                        <use xlink:href="#vector-olas" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                        <use xlink:href="#vector-olas" x="48" y="7" fill="#3d77ba" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+        <div class="contenedor_footer">
+            <div class="contenedor_content">
+
+                <div class="contenedor_list">
+                    <ul class="footer_list">
+                        <li>Preguntas Frecuentes</li>
+                        <li>Términos y Condiciones</li>
+                    </ul>
+                </div>
+
+                <div class="contenedor_list2">
+                    <ul class="footer_list">
+                        <li>Contáctenos</li>
+                        <li>Nosotros</li>
+                    </ul>
+                </div>
+
+                <div class="contenedor_list3">
+                    <ul class="footer_list">
+                        <li>Siguenos en</li>
+                        <div class="iconos">
+                            <img src="{{ url_for('static', filename='img/tik-tok.png') }}" alt="tiktok">
+                            <img src="{{ url_for('static', filename='img/instagram1.png') }}" alt="instagram">
+                        </div>
+                    </ul>
+                </div>
+
+            </div>
+            <p class="copy">&copy;2024-Emprenesy.Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+
+    <script src="/static/js/navegacionPrincipal_admin.js"></script>
+    <script src="/static/js/buscadorAdmin.js"></script>
+    <script src="/static/js/servidor.js"></script>
+    <script src="/static/js/detalleServidorEmprende.js"></script>
+    <script src="/static/js/demoServidor.js"></script>
+    <script src="/static/js/whattssap.js"></script>
+
+</body>
+
+</html>

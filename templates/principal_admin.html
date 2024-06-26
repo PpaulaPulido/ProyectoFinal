@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emprenesy</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+  <link rel="icon" href="{{url_for ('static', filename='img/Logo2.jpeg')}}" type="image/icon type">
+
+  <link rel="stylesheet" href="/static/styles/index_user.css">
+  <link rel="stylesheet" href="/static/styles/whatssap.css">
+  <link rel="stylesheet" href="{{url_for ('static', filename='styles/index_user.css')}}">
+
+
+</head>
+
+<body>
+  <header>
+    <!--slider header-->
+    <section class="contenedor">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-interval="2000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='img/slider_buscador.png') }}" alt="slider1">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ url_for('static', filename='img/slider_buscador1.png') }}" alt="slider2">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ url_for('static', filename='img/slider_buscador3.png') }}" alt="slider3">
+          </div>
+        </div>
+      </div>
+      <!--barra de navegacion-->
+      <div id="cabeza">
+        <div class="logoedit">
+          <img class="logo" style="height: 80px; width: 80px; margin-left: 35px;" src="{{ url_for('static', filename='img/logo_Emprenesy.png') }}" alt="Emprenesy">
+        </div>
+        <div id="Barra">
+          <nav class="barraedit">
+            <ul class="nav_list">
+              <li><a class="link" href="{{url_for('admin.nosotrosEmprenesy')}}">Sobre Nosotros</a></li>
+              <li><a class="link" href="{{url_for('admin.indexPrincipal')}}">Inicio</a></li>
+              <li><a class="link" href="{{url_for('admin.favoritosAdmin')}}">Mis favoritos</a></li>
+              <li><a class="link1" href="#"><img id="imgPerfil" alt="perfil"></a>
+                <ul class="perfil_list">
+                  <li><a href="{{url_for('admin.perfil_admin')}}">Ver perfil</a></li>
+                  <li><a href="{{url_for('admin.index_admin')}}">Dashboard</a></li>
+                  <li><a href="#">Notificaciones</a></li>
+                  <li><a href="{{url_for('admin.editarPerfilAdmin', id=admin_id)}}">Configuración</a></li>
+                  <li><a id="cerrarSesion" href="{{url_for('usuarios.logout')}}">Cerrar sesión</a></li>
+                </ul>
+              </li>
+            </ul>
+
+          </nav>
+        </div>
+      </div>
+      <!--buscador-->
+      <div class="container_buscador">
+        <div class="container_input">
+          <div id="ctn-bars-search">
+            <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?">
+          </div>
+          <div id="ctn-icon-search container_icon">
+            <i class="fas fa-search" id="icon-search"></i>
+          </div>
+          <div class="button_buscador"  id="ctn-icon-search">
+            <button>Search</button>
+          </div>
+        </div>
+        <ul id="box-search"></ul>
+        <div id="cover-ctn-search"></div>
+      </div>
+    </section>
+
+    <div id="menuLateralToggle">
+      <div id="toggle">
+        <div class="nav-list2" id="nav-list2">
+          <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <ul class="menu-opciones">
+            <li><i class="fa-solid fa-x" id="cerrar"></i></li>
+            <li><img src="{{ url_for('static', filename='img/logo_Emprenesy.png') }}" alt="logo emprenesy"
+                class="logoToggle"></li>
+            <li><a href="{{url_for('admin.nosotrosEmprenesy')}}">Sobre Nosotros</a></li>
+            <li><a href="{{url_for('admin.indexPrincipal')}}">Inicio</a></li>
+            <li><a href="{{url_for('admin.favoritosAdmin')}}">Mis favoritos</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+
+    <div id="url" style="display: none;">
+      <a id="detalle-res-url" data-url="{{ url_for('res.detalleRestauranteAdmin') }}"></a>
+      <a id="detalle-evento-url" data-url="{{ url_for('evento.detalleEventoAdmin') }}"></a>
+      <a id="detalle-emprende-url" data-url="{{ url_for('emprende.detalleEmprendeAdmin') }}"></a>
+    </div>
+
+    <section class="contenedor_tarjetas">
+      <div class="contenedor_tarjeta">
+        <img src="{{ url_for('static', filename='img/restaurante.png') }}" alt="logo restaurante" class="tarjeta_img">
+
+        <div class="tarjeta">
+          <div class="tarjeta_efecto">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="tarjeta_content">
+              <h2>Conoce los mejores lugares para comer</h2>
+              <p>Explora rincones gastronómicos que despiertan un festín para tus sentidos en una travesía deliciosa</p>
+            </div>
+          </div>
+        </div>
+        <img src="{{ url_for('static', filename='img/evento.png') }}" alt="logo evento" class="tarjeta_img">
+        <div class="tarjeta">
+          <div class="tarjeta_efecto">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="tarjeta_content">
+              <h2>Disfruta con tus amigos</h2>
+              <p>Sumérgete en la diversión y vive momentos inolvidables en eventos llenos de energía y emoción</p>
+            </div>
+          </div>
+        </div>
+        <img src=" {{ url_for('static', filename='img/tienda.png') }}" alt="logo evento" class="tarjeta_img">
+        <div class="tarjeta">
+          <div class="tarjeta_efecto">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="tarjeta_content">
+              <h2>Conoce los negocios más innovadores</h2>
+              <p>Explora un mundo de innovación y creatividad en los emprendimientos que despiertan tu curiosidad</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contenedor_slider contenedor_restaurantes">
+      <div class="contenedor_texto">
+        <h2>Los restaurantes más populares</h2>
+        <a id="res_link" href="{{ url_for('res.sectionResAdmin') }}" onclick="parametros()">Ver todo</a>
+      </div>
+      <div class="container_slider">
+        <div class="slider_tarjetas">
+          <!-- Contenedor de las tarjetas -->
+        </div>
+        <div class="controles">
+          <!-- Botón de slide anterior -->
+          <div class="button_anterior button">
+            <img src="{{ url_for('static', filename='img/flecha_izquierda.png') }}" alt="flecha izquierda">
+          </div>
+          <!-- Botón de slide siguiente -->
+          <div class="button_siguiente button">
+            <img src="{{ url_for('static', filename='img/flecha_derecha.png') }}" alt="flecha derecha">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contenedor_slider contenedor_eventos">
+      <div class="contenedor_texto">
+        <h2>Últimos eventos</h2>
+        <a id="evento_link" href="{{url_for('evento.sectionEventoAdmin')}}" onclick="parametros()">Ver todo</a>
+      </div>
+      <div class="container_slider">
+        <div class="slider_tarjetas2">
+          <!-- Contenedor de las tarjetas -->
+        </div>
+        <div class="controles">
+          <!-- Botón de slide anterior -->
+          <div class="button_anterior2 button">
+            <img src="{{ url_for('static', filename='img/flecha_izquierda.png') }}" alt="flecha izquierda">
+          </div>
+          <!-- Botón de slide siguiente -->
+          <div class="button_siguiente2 button">
+            <img src="{{ url_for('static', filename='img/flecha_derecha.png') }}" alt="flecha derecha">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contenedor_slider contenedor_emprendimientos">
+      <div class="contenedor_texto">
+        <h2>Conoce los emprendimientos más recientes</h2>
+        <a id="emprende_link" href="{{url_for('emprende.sectionEmprendeAdmin')}}" onclick="parametros()">Ver todo</a>
+      </div>
+      <div class="container_slider">
+        <div class="slider_tarjetas3">
+          <!-- Contenedor de las tarjetas -->
+        </div>
+        <div class="controles">
+          <!-- Botón de slide anterior -->
+          <div class="button_anterior3 button">
+            <img src="{{ url_for('static', filename='img/flecha_izquierda.png') }}" alt="flecha izquierda">
+          </div>
+          <!-- Botón de slide siguiente -->
+          <div class="button_siguiente3 button">
+            <img src="{{ url_for('static', filename='img/flecha_derecha.png') }}" alt="flecha derecha">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="emprendimientos">
+      <div class="emprendimientos__contenedor">
+        <div class="empredimientos_imagen">
+          <img src="{{ url_for('static', filename='img/empredimiento.jpg') }} " alt="emprendimiento">
+        </div>
+        <div class="empredimientos_content">
+          <h2>Emprendimientos: Descubre, Conecta, Inspírate</h2>
+          <p>¡Dale vida a tu curiosidad! Haz clic y adéntrate en un universo de negocios diversos. Explora, conoce y
+            conecta con historias que inspiran, innovan y transforman la manera en que vemos el mundo empresarial hoy.!
+          </p>
+          <button class="emprendimiento_btn"><a id="emprende_link2" href="{{url_for('emprende.sectionEmprende')}}"
+              onclick="parametros()">Ver Más</a></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="container_contacto">
+      <div class="contacto_imagen">
+        <div class="imagen">
+          <img
+            src="https://valores.grupobancolombia.com/wcm/connect/valores.grupobancolombia.com-5858/bdae8607-c87b-42c4-8f62-65f1046b34fb/valores+bancolombia+contacto.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_K9HC1202P0MCD06OV9VLRBJ473-bdae8607-c87b-42c4-8f62-65f1046b34fb-oPioV5z"
+            alt="imagen de contacto">
+        </div>
+        <h2>¡Estamos aquí para ti!</h2>
+      </div>
+      <div class="contacto_info">
+        <h3>Envía tu Mensaje</h3>
+        <form action="{{ url_for('admin.enviar') }}" method="POST" class="info__form" id="form_contacto">
+          <input type="text" id="nombreContacto" name="nombreContacto" placeholder="Nombres" required>
+          <input type="email" id="emailContacto" name="emailContacto" placeholder="Correo Electrónico" required>
+          <input type="text" id="tema" name="tema" placeholder="Tema del mensaje" required>
+          <textarea name="mensaje" id="mensaje" cols="100" rows="8" placeholder="Mensaje" required></textarea>
+          <input type="submit" value="Enviar" id="btn_enviar">
+        </form>
+      </div>
+    </div>
+
+    <!--WHATSAPP BUTTON-->
+    <div class="nav-bottom">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <div class="popup-whatsapp fadeIn">
+        <div class="content-whatsapp -top">
+          <button type="button" class="closePopup">
+            <i class="material-icons icon-font-color">close</i>
+          </button>
+          <p> <img src="{{ url_for('static', filename='img/logo_Emprenesy.png') }}" width="35" id="image-whatssap">
+            Hola, ¿cómo podemos ayudate? </p>
+        </div>
+
+        <div class="content-whatsapp -bottom">
+          <input class="whats-input" id="whats-in" type="text" Placeholder="Enviar mensaje..." />
+          <button class="send-msPopup" id="send-btn" type="button">
+            <i class="material-icons icon-font-color--black">send</i>
+          </button>
+        </div>
+
+      </div>
+
+      <button type="button" id="whats-openPopup" class="whatsapp-button">
+        <div class="float">
+          <i class="fa fa-whatsapp my-float"></i>
+        </div>
+      </button>
+
+      <div class="circle-anime"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="principal_footer">
+      <div>
+        <svg class="olas" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+          <defs>
+            <path id="vector-olas" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+          <g class="efecto">
+            <use xlink:href="#vector-olas" x="48" y="0" fill="rgba(255,255,255,0.7" />
+            <use xlink:href="#vector-olas" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+            <use xlink:href="#vector-olas" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+            <use xlink:href="#vector-olas" x="48" y="7" fill="#3d77ba" />
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="contenedor_footer">
+      <div class="contenedor_content">
+
+        <div class="contenedor_list">
+          <ul class="footer_list">
+            <li>Preguntas Frecuentes</li>
+            <li>Términos y Condiciones</li>
+          </ul>
+        </div>
+
+        <div class="contenedor_list2">
+          <ul class="footer_list">
+            <li>Contáctenos</li>
+            <li>Nosotros</li>
+          </ul>
+        </div>
+
+        <div class="contenedor_list3">
+          <ul class="footer_list">
+            <li>Siguenos en</li>
+            <div class="iconos">
+              <img src="{{ url_for('static', filename='img/tik-tok.png') }}" alt="tiktok">
+              <img src="{{ url_for('static', filename='img/instagram1.png') }}" alt="instagram">
+            </div>
+          </ul>
+        </div>
+
+      </div>
+      <p class="copy">&copy;2024-Emprenesy.Todos los derechos reservados</p>
+    </div>
+  </footer>
+  <script src="/static/js/datos.js"></script>
+  <script src="/static/js/indexPrincipal.js"></script>
+  <script src="/static/js/buscadorAdmin.js"></script>
+  <script src="/static/js/whattssap.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

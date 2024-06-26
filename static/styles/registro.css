@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+}
+
+body {
+    background-color: #4A8FAD;
+    margin: 0;
+    padding: 0;
+    background-size: 500%;
+}
+
+header {
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.login-container {
+    background-color: #6194cf;
+    border-radius: 5px;
+    width: 400px;
+    padding: 20px;
+    margin: 50px auto;
+    display: flex;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color: #fff;
+    margin: 15px 0;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+label,
+select {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"],
+select {
+    width: calc(100% - 10px);
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 355px;
+}
+
+.botons {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.forgot-password {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/*estilos del sweatalert*/
+.border-blue {
+    border: 3px solid #213859 !important;
+    box-shadow: 0 0 15px #fff;
+}
+
+.swal2-success-ring {
+    border: 3px solid #213859 !important;
+}
+
+.swal2-title {
+    color: #050047;
+    font-size: 25px;
+}
+
+.custom-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.swal2-popup {
+    display: block !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin: auto !important;
+}
+
+img {
+    border-radius: 1rem;
+    background-size: 83%;
+    margin: 30px;
+}
+
+.controls {
+    width: calc(100% - 10px);
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 355px;
+}

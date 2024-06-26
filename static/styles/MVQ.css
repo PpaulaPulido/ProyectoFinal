@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,500;1,6..12,500&family=Poppins:wght@300;400&family=Roboto+Slab:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Roboto Slab', serif;
+
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+}
+
+header {
+    scroll-behavior: smooth;
+}
+
+#cabecera {
+    position: absolute;
+    z-index: 2;
+}
+
+.carousel-inner {
+    min-height: 610px;
+    max-height: 700px;
+    height: 610px;
+}
+
+#carouselExampleCaptions .carousel-item img {
+    height: 610px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 55%;
+    right: auto;
+    left: auto;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 80%;
+    margin-left: 130px;
+    text-align: center;
+}
+
+.captionContenido {
+    background-color: rgba(0, 0, 0, 0.432);
+    width: 80%;
+    margin: 0 auto;
+    height: fit-content;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.captionContenido h2 {
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+}
+
+.captionContenido p {
+    font-size: 22px;
+}
+
+.btn_sliderMV {
+    background-color: #fff;
+    box-shadow: 2px 3px 4px 4px rgba(0, 0, 0, 0.1);
+    padding: 8px 10px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 10px;
+    color: #0447ac;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin: 0 auto;
+
+
+}
+
+#nosotrosMV {
+    position: relative;
+    height: 500px;
+    background-image: url('https://static.roadtrip.travel/media/roadtrips/copia-de-copia-de-guape-plan-uribe-2-1-e3195d5.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nosotrosMV::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 0;
+}
+
+.divNosotros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.book {
+    position: relative;
+    border-radius: 10px;
+    width: 320px;
+    height: 400px;
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #000;
+    padding: 15px;
+}
+
+.cover {
+    top: 0;
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.book:hover .cover {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotatey(-80deg);
+    -ms-transform: rotatey(-80deg);
+    transform: rotatey(-80deg);
+}
+
+.coverContainer {
+    padding: 10px;
+    height: 90%;
+    width: 90%;
+}
+
+.coverContainer .coverTitle {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin: 30px 0;
+    background-image: linear-gradient(135deg, #002761 0%, #440683 54%, #200080 100%);
+    background-clip: text;
+    color: transparent;
+}
+
+.coverImg {
+    border-radius: 50%;
+    height: 200px;
+    width: 200PX;
+    margin: 0 auto;
+}
+
+.coverImg img {
+    width: 100%;
+    height: 100%;
+}
+
+.booktext {
+    font-size: 16px;
+    margin-left: 40px;
+}
+
+#nosotrosEquipo {
+    height: 500px;
+    background-image: url('https://www.elespectador.com/resizer/NLkEd1Hwp3SQ5DpDSawGMsq9vlY=/920x613/filters:quality(60):format(jpeg)/www.elespectador.com/resizer/EPI7gn-gbg4RNIdGzvn-LAqKim0=/arc-anglerfish-arc2-prod-elespectador/public/EKS4HH75ZVE3NK3O3CGTWVQ7G4.JPG');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerNosotros {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.nosotros {
+    background-color: #fff;
+    box-shadow: 0 2px 3px 4px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.nosotrosImg {
+    height: 250px;
+    width: 200px;
+    margin: 0 auto;
+
+}
+
+.nosotrosImg img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 920px) {
+
+    .carousel-caption {
+        top: 50%;
+        margin-left: 50px;
+    }
+    .btn_sliderMV{
+        width: 70%;
+    }
+    .captionContenido p {
+        font-size: 17px;
+    }
+    #nosotrosMV, #nosotrosEquipo {
+        height: fit-content;
+    }
+    .divNosotros {
+        display: block;
+    }
+    .book {
+        margin: 40px 0;
+    }
+    .coverContainer .coverTitle {
+        background-image: linear-gradient(135deg, #002761 0%, #440683 54%, #200080 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    .containerNosotros{
+        display: block;
+    }
+    .nosotros {
+        margin: 40px 0;
+    }
+}

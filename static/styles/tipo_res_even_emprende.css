@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,500;1,6..12,500&family=Poppins:wght@300;400&family=Roboto+Slab:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+h1,
+h2,
+h3 {
+  font-family: "Roboto Slab", serif;
+}
+p {
+  font-family: "Poppins", sans-serif;
+}
+
+/*estilos de la barra de navegacion*/
+ul,
+ol {
+  list-style: none;
+}
+
+/*estilos de los tipos de restaurantes*/
+#resturanteContenedor{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  padding: 30px;
+  margin-top:70px;
+}
+.container_tarjeta {
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 30px auto 0 auto;
+  height: fit-content;
+}
+
+.tipo_imagen_container{
+  display: flex;
+}
+.tipo_imagen_container .favorite{
+  font-size: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  color: #ccc;
+}
+.tipo_imagen {
+  width: 90%;
+  height: 250px;
+  margin-left: 13px;
+  margin-bottom: 20px;
+}
+.tipo_imagen img {
+  width: 100%;
+  height: 100%;
+  margin: 20px auto 0 auto;
+  border-radius: 10px;
+}
+.container_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  color: #fff;
+  
+}
+.btn {
+  width: 140px;
+  height: 45px;
+  background: linear-gradient(to top, #03004c, #12376e, #23487f);
+  color: #fff;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.btn span {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: top 0.5s;
+}
+
+.btn-text-one {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.btn-text-two {
+  position: absolute;
+  color: #fff;
+  width: 100%;
+  top: 150%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.btn:hover .btn-text-one {
+  top: -100%;
+}
+
+.btn:hover .btn-text-two {
+  top: 50%;
+}
+
+.contenido_texto p {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 20px;
+  text-transform: capitalize;
+}
+.container { 
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: -30px;
+  margin-left: -30px;
+}
+.rating {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 30px 40px;
+}
+.rating input {
+  position: relative;
+  width: 30px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.rating input::before {
+  content: "\f005";
+  position: absolute;
+  font-family: fontawesome;
+  font-size: 20px;
+  color: #ccc;
+}
+
+.rating input:hover ~ input::before,
+.rating input:hover::before,
+.rating input:checked ~ input::before,
+.rating input:checked::before {
+  color: var(--c);
+}
+
+/********************************Estilos de tipos de eventos**********************************/
+#eventoContenedor, #emprendimientoContenedor, #resturanteContenedor{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  padding: 30px;
+  margin-top:70px;
+  min-height: 900px;
+  height: fit-content;
+}
+@media only screen and (max-width: 920px){
+  #eventoContenedor, #emprendimientoContenedor, #resturanteContenedor{
+    min-height: 450px;
+    grid-template-columns: none;
+  }
+  .container_tarjeta{
+    width: 300px;
+  }
+  .contenido_texto p{
+    margin-bottom: 15px;
+  }
+}

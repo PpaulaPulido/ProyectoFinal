@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/Logo2.jpeg') }}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/ea06c7c0f7.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/static/styles/whatssap.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/iniciar_sesion.css') }}">
+
+    <link rel="stylesheet" href="/static/styles/iniciar_sesion.css">
+
+</head>
+
+<body>
+    <main>
+        <div class="recuperar-container">
+            <form id="loginForm" action="{{ url_for('usuarios.recuperarContrasena') }}" method="POST">
+                <h2>Recuperar contraseña</h2>
+                <div class="fields">
+                    <div class="input-group">
+                        <label for="rolRe">Escoge tu rol</label>
+                        <select name="rolRe" id="rolRe" class="controls">
+                            <option value="">Seleccionar</option>
+                            <option value="usuario">Usuario</option>
+                            <option value="Administrador">Administrador</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="correoRe">Correo electrónico:</label>
+                        <input type="email" id="correoRe" name="correoRe">
+                    </div>
+                  
+                </div>
+                
+                <div class="input-group">
+                    <label for="txtcontrasenaActual">Contraseña Actual:</label>
+                    <input type="password" id="txtcontrasenaActual" name="txtcontrasenaActual">
+                </div>
+                <div class="input-group">
+                    <label for="txtcontrasenaNueva">Nueva Contraseña:</label>
+                    <input type="password" id="txtcontrasenaNueva" name="txtcontrasenaNueva">
+                </div>
+                <div class="input-group">
+                    <label for="txtcontrasenaConfirmar">Confirmar Contraseña:</label>
+                    <input type="password" id="txtcontrasenaConfirmar" name="txtcontrasenaConfirmar">
+                </div>
+                <div class="input-group ">
+                    <button type="submit" class="btn_recuperar">Recuperar</button>
+                </div>
+            </form>
+            <div class="containerImg">
+                <img src="/static/img/imagenContrasna.jpg"
+                    alt="Emprenesy">
+            </div>
+        </div>
+
+
+        <!--WHATSAPP BUTTON-->
+        <div class="nav-bottom">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <div class="popup-whatsapp fadeIn">
+                <div class="content-whatsapp -top">
+                    <button type="button" class="closePopup">
+                        <i class="material-icons icon-font-color">close</i>
+                    </button>
+                    <p> <img src="{{ url_for('static', filename='img/logo_Emprenesy.png') }}" width="35"
+                            id="image-whatssap">
+                        Hola, ¿cómo podemos ayudate? </p>
+                </div>
+
+                <div class="content-whatsapp -bottom">
+                    <input class="whats-input" id="whats-in" type="text" Placeholder="Enviar mensaje..." />
+                    <button class="send-msPopup" id="send-btn" type="button">
+                        <i class="material-icons icon-font-color--black">send</i>
+                    </button>
+                </div>
+
+            </div>
+
+            <button type="button" id="whats-openPopup" class="whatsapp-button">
+                <div class="float">
+                    <i class="fa fa-whatsapp my-float"></i>
+                </div>
+            </button>
+
+            <div class="circle-anime"></div>
+        </div>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="/static/js/sesion.js"></script>
+    <script src="/static/js/whattssap.js"></script>
+</body>
+
+</html>

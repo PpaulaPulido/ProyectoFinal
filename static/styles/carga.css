@@ -1,0 +1,124 @@
+/*carga inicio*/
+.loader-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background: #2959c2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loader-container img{
+    width: 20rem;
+}
+ .loader-container.fade-out{
+    top: 110%;
+    opacity: 0;
+ }
+
+
+ 
+.loader-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    animation: none;
+    opacity: 0;
+}
+/*.loader-container.desvanecer{
+    top: 110%;
+    opacity: 0;
+}*/
+@keyframes desvanecer {
+    0% {
+        opacity: 1;
+        z-index: 10;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+        transform: translateY(-100%);
+    }
+}
+.loader-container img{
+    width: 30%;
+}
+#loader-container1{
+    background-color: #2959c2;
+}
+
+---------------------------------------------------------------------------------------------
+
+/*carga inicio*/
+.loader-conta{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background: #4A8FAD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loader-conta img{
+    width: 20rem;
+}
+ .loader-conta.fade-out2{
+    top: 110%;
+    opacity: 0;
+ }
+
+
+ 
+.loader-conta{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    animation: none;
+    opacity: 0;
+}
+/*.loader-container.desvanecer{
+    top: 110%;
+    opacity: 0;
+}*/
+@keyframes desvanecer {
+    0% {
+        opacity: 1;
+        z-index: 10;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+        transform: translateY(-100%);
+    }
+}
+.loader-conta img{
+    width: 30%;
+}
+
+#loader-container2{
+    background-color: #4A8FAD;
+}

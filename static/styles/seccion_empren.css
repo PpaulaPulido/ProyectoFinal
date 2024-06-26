@@ -1,0 +1,700 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,500;1,6..12,500&family=Poppins:wght@300;400&family=Roboto+Slab:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Roboto Slab", serif;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/*estilos del slider*/
+#carouselExampleSlidesOnly .carousel-inner {
+  position: relative;
+}
+
+#carouselExampleSlidesOnly .carousel-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-inner {
+  height: 560px;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 560px;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, #fc8afe 0%, #fcc99a 99%);
+}
+
+.carousel-img::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 400px;
+  width: 55%;
+  height: 100%;
+  background-image: url("https://www.elespectador.com/resizer/jsilDgTYa4oRy-tryM6oIl8RBj8=/920x613/filters:quality(60):format(jpeg)/www.elespectador.com/resizer/GGsL_EZEvsUq0YVvOxIDYDc01Cs=/arc-anglerfish-arc2-prod-elespectador/public/IO7VNY3JMZBH5CRR4NKHE7NXL4.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-clip-path: polygon(14% 0, 50% 100%, 100% 100%, 100% 0);
+  clip-path: polygon(14% 0, 50% 100%, 100% 100%, 100% 0);
+  transform-origin: bottom left;
+  transform: rotate(0deg) scaleY(1) scaleX(1.3);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  #contenido1 {
+    margin-left: 10%;
+    margin-block-end: -90px;
+    width: 450px;
+    height: 450px;
+  }
+
+  #contenido2 {
+    margin-left: -12%;
+    margin-block-end: -90px;
+    width: 450px;
+    height: 450px;
+  }
+
+  #contenido3 {
+    margin-left: -12%;
+    bottom: 0.1%;
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #contenido1 {
+    margin-block-end: -90px;
+    width: 450px;
+    height: 450px;
+    margin-left: 10%;
+  }
+
+  #contenido2 {
+    width: 450px;
+    height: 450px;
+    margin-left: -25%;
+    margin-block-end: -90px;
+  }
+
+  #contenido3 {
+    width: 450px;
+    height: 450px;
+    margin-left: -14%;
+    bottom: 0.1%;
+  }
+}
+
+.carousel_text {
+  position: absolute;
+  color: #fff;
+  bottom: 20%;
+  left: 0;
+  padding: 0px 30px;
+  width: 45%;
+}
+
+.carousel_text h2 {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.carousel_text p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 50px 0 40px 60px;
+}
+
+.carousel_text .container-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  cursor: pointer;
+  width: 50%;
+  padding: 8px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.btn a {
+  color: #fff;
+}
+
+.slider_btn1 {
+  background-color: #001c3b;
+}
+
+.slider_btn1:hover {
+  background-color: #3d77ba;
+}
+
+/***********************************************/
+.carousel-img2 {
+  width: 100%;
+  height: 560px;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, #0088df 0%, #00aaff 48%, #00aaff 89%, #fefefe 100%);
+}
+
+.carousel-img2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  background-color: #0088df;
+  border-radius: 40% 50% 40% 0;
+}
+
+.carousel_contenido {
+  bottom: 35%;
+  left: 15%;
+}
+
+.img2 {
+  width: 520px;
+  height: 500px;
+  position: relative;
+  left: -240px;
+  top: 510px;
+}
+
+.img2 img {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 40% 40% 0;
+}
+
+.carousel_contenido .contenido_text {
+  position: relative;
+  top: 110px;
+  right: 0;
+  left: 80%;
+  padding: 10px;
+  text-align: center;
+}
+
+.contenido_text h2 {
+  font-size: 40px;
+  background-image: linear-gradient(135deg, #fefefe 0%, #fefefe 100%);
+  background-clip: text;
+  color: transparent;
+  margin-bottom: -20px;
+}
+
+.contenido_text p {
+  font-size: 20px;
+  width: 90%;
+  margin-left: 30px;
+}
+
+.slider_btn2 {
+  background-color: #000149;
+  width: 40%;
+  border-radius: 13px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.slider_btn2:hover {
+  background-color: #0000af;
+}
+
+.contenido_circle {
+  position: relative;
+}
+
+.contenido_circle .circle {
+  background-color: #0088df;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle1 {
+  bottom: 200px;
+  left: 600px;
+  height: 400px;
+  width: 400px;
+}
+
+.circle2 {
+  bottom: -300px;
+  left: 900px;
+  height: 200px;
+  width: 200px;
+}
+
+/**************************************************************/
+.carousel-img3 {
+  width: 100%;
+  height: 560px;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, #c3c4ff 0%, #3675ff 68%, #3bc9db 100%);
+}
+
+.carousel-img3::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 55%;
+  height: 100%;
+  background-image: url("https://www.iebschool.com/blog/wp-content/uploads/2016/04/pexels-valeria-ushakova-3094225.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 30% 30% 0;
+}
+
+.contenido_carousel {
+  left: 57%;
+  width: 40%;
+  bottom: 20%;
+  text-align: center;
+}
+
+.contenido_carousel h2 {
+  font-size: 40px;
+  margin: 30px 0;
+  background-image: linear-gradient(135deg, #fefefe 0%, #fefefe 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+.contenido_carousel p {
+  font-size: 20px;
+}
+
+.slider_btn3 {
+  background-color: #000149;
+  width: 50%;
+  border-radius: 15px;
+}
+
+.slider_btn3:hover {
+  background-color: #0000af;
+}
+
+/********************estilos de container tarjetas***********************/
+.container_cards {
+  margin: 30px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.container_cards .cards_contenido {
+  height: 250px;
+  width: 270px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.card1 {
+  background-image: url("https://img.freepik.com/foto-gratis/tienda-ropa-tienda-ropa-perchas-tienda-boutique-moderna_1150-8886.jpg?size=626&ext=jpg&ga=GA1.1.1488620777.1712534400&semt=ais");
+}
+
+.card2 {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6fg1i3c46kCmkNv0sYiILa3Nzr5M9QQ0kZQCkuTjmMQ&s");
+  background-position: center;
+}
+
+.card3 {
+  background-image: url("https://www.uniminuto.edu/sites/default/files/2021-08/Mesa%20720%20x%20600%20ACTUALIDAD_12.png");
+}
+
+.card4 {
+  background-image: url("https://d1ih8jugeo2m5m.cloudfront.net/2022/08/accesorios-de-mascotas.jpg");
+}
+
+.contenido_title {
+  background-color: #3d77ba;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px 20px 0 0;
+}
+
+.contenido_title h3 {
+  font-size: 22px;
+  color: #fff;
+}
+
+/************estilos empredimientos gastronomicos*************************/
+.container_poster {
+  background-image: linear-gradient(135deg, rgba(0, 139, 212, 0.8) 0%, rgba(44, 197, 255, 0.8) 59%, #2cc5ff 100%);
+  width: 94%;
+  margin: 30px auto;
+  border-radius: 10px;
+  display: flex;
+  color: #fff;
+}
+
+.poster_img {
+  width: 90%;
+  height: 90%;
+}
+
+.poster_img img {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.contenido_poster {
+  padding: 40px;
+  text-align: center;
+}
+
+.contenido_poster h3 {
+  font-size: 30px;
+}
+
+.contenido_poster p {
+  margin: 30px 0 40px 0;
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.contenido_poster button {
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 18px;
+  text-align: center;
+  background-color: #073a74;
+  width: 40%;
+  margin: 0 auto;
+
+  @media only screen and (max-width: 767px) {
+    width: 80%;
+  }
+}
+
+.contenido_poster button a {
+  color: #fff;
+}
+
+.contenido_poster button:hover {
+  background-color: #267bdd;
+}
+
+/***************************estilos de slider de tarjetas************************/
+.section {
+  background-image: linear-gradient(225deg,
+      #012f46 1%,
+      #147ed5 73%,
+      #6cfce2 99%);
+  padding: 10px;
+}
+
+.section2 {
+  background-image: linear-gradient(225deg,
+      #012f46 1%,
+      #147ed5 73%,
+      #6cfce2 99%);
+  padding: 10px;
+}
+
+.section_title h2 {
+  color: #fff;
+  margin: 30px 0 30px 50px;
+  font-size: 25px;
+}
+
+.swiper_card {
+  position: relative;
+}
+
+.swiper {
+  width: 70%;
+}
+
+.card {
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  height: 430px;
+  margin: 20px 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  height: 40%;
+  width: 100%;
+  background: white;
+  border-radius: 20px 20px 0 0;
+}
+
+.card .rating {
+  margin: 10px 10px 0 10px;
+}
+
+.card .card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  position: relative;
+  z-index: 20;
+}
+
+.card .rating i {
+  font-size: 18px;
+  margin: 0 2px;
+  color: gold;
+}
+
+.swiper-button-next {
+  color: #fff;
+  margin-right: 150px;
+}
+
+.swiper-button-prev {
+  color: #fff;
+  margin-left: 150px;
+}
+
+.swiper-pagination-bullet {
+  height: 7px;
+  width: 26px;
+  border-radius: 25px;
+  background: white;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.title_contenedor {
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.title_contenedor .content_title {
+  font-size: 22px;
+}
+
+.swiper_conta_img {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper_conta_img .swiper_img {
+  width: 250px;
+  height: 200px;
+  margin: 20px auto 0 15px;
+  display: flex;
+}
+
+.swiper_conta_img .swiper_img .card_img {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.swiper_conta_img .favorite {
+  font-size: 20px;
+  margin-left: 7px;
+  cursor: pointer;
+  margin-top: 20px;
+  color: #cecbcb;
+}
+
+.favorite.checked {
+  color: red;
+}
+
+.swiper_button {
+  background-color: #051248;
+  color: #fff;
+  padding: 6px;
+  width: 50%;
+  border-radius: 12px;
+  font-size: 17px;
+  margin: 10px auto 0 auto;
+  text-align: center;
+}
+
+.swiper_button:hover {
+  background-color: #002b68;
+}
+
+@media only screen and (max-width: 920px) {
+  .carousel-img::before {
+    left: 110px;
+  }
+
+  .carousel_text1 {
+    display: none;
+  }
+
+  .carousel_text {
+    text-align: center;
+  }
+
+  .carousel_text h2 {
+    word-spacing: 20px;
+    letter-spacing: 2px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .slider_btn1 {
+    width: 500px;
+    margin: 20px 0 0 30px;
+  }
+
+  .contenido_text {
+    width: 380px;
+    margin-bottom: 320px;
+    padding: 10px;
+    margin-right: 100px;
+  }
+
+  .contenido_text h2 {
+    font-size: 30px;
+    background: -webkit-linear-gradient(180deg, #66faf5 37%, #ee83d0 92%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 40px;
+  }
+
+  .carousel_contenido {
+    left: -110px;
+    bottom: 40px;
+  }
+
+  .carousel-img2::before {
+    display: none;
+  }
+
+  .img2 {
+    left: 110px;
+    width: 320px;
+    height: 300px;
+    top: 600px;
+  }
+
+  .img2 img {
+    border-radius: 50%;
+  }
+
+  .slider_btn2 {
+    width: 80%;
+  }
+
+  .contenido_carousel_title {
+    display: none;
+  }
+
+  .contenido_carousel {
+    left: 40%;
+    width: 55%;
+    bottom: 15%;
+    text-align: center;
+    padding: 10px;
+    margin-right: 10px;
+  }
+
+  .contenido_carousel p {
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  .slider_btn3 {
+    width: 70%;
+    margin-left: 80px;
+  }
+
+  .container_cards {
+    grid-template-columns: none;
+  }
+
+  .swiper-button-next {
+    margin-right: 10px;
+  }
+
+  .swiper-button-prev {
+    margin-left: 10px;
+  }
+
+  .container_poster {
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .poster_img {
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+  }
+
+  .contenido_poster p {
+    text-align: center;
+  }
+}

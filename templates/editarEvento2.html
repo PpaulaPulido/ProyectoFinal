@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Emprenesy</title>
+
+    <link rel="icon" href="{{url_for ('static', filename='/img/Logo2.jpeg')}}" type="image/icon type">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <link rel="stylesheet" href="../static/styles/generales_admin.css" />
+    <link rel="stylesheet" href="../static/styles/index_admin.css" />
+    <link rel="stylesheet" href="/static/styles/whatssap.css">
+    <link rel="stylesheet" href="{{url_for ('static', filename='styles/index_admin.css')}}">
+    <link rel="stylesheet" href="{{url_for ('static', filename='styles/generales_admin.css')}}">
+
+    <!-- Estilos de la API de Here Maps -->
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+
+    <!-- Scripts de la API de Here Maps -->
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+</head>
+
+
+<body>
+    <header id="cabecera">
+        <div id="cabeza"></div>
+    </header>
+
+    <main>
+
+        <div id="sidebar">
+            <div class="toggle-btn">
+                <span><i class="bi bi-list"></i></span>
+            </div>
+            <ul class="toggle-info">
+                <li>
+                    <div class="tigle-img">
+                        <img src="{{ url_for('static', filename='img/logo_Emprenesy.png') }}" alt="logo emprenesy"
+                            class="logo">
+                    </div>
+                </li>
+                <li><a href="{{ url_for('admin.index_admin') }}">Dashboard</a></li>
+                <li><a href="{{url_for('admin.perfil_admin')}}">Perfil</a></li>
+                <li><a href="{{url_for('admin.indexPrincipal')}}">Inicio</a></li>
+                <li><a href="{{url_for('admin.nosotrosEmprenesy')}}">Nosotros</a></li>
+            </ul>
+        </div>
+
+        <div class="container_publicaciones" id="publicaciones__form">
+            <div class="publicaciones_contenido">
+                <div class="contenido__title">
+                    <h2>Añadir tu evento</h2>
+                </div>
+                <div class="contenido__detalles">
+
+                    <form class="info_detalles" id="formularioLocation"
+                        action="{{ url_for('evento.editarEventoUbicacion', id=evento_id) }}" method="POST"
+                        enctype="multipart/form-data">
+
+                        <div class="detalle__sitio">
+                            <h3>Ubicaciones del sitio</h3>
+                        </div>
+
+                        <div class="container_ubicacion">
+                            <div class="detalle__sitio">
+                                <input type="text" placeholder="Ingresar dirección" class="address"
+                                    name="direccionesEditar[]" />
+                            </div>
+                        </div>
+                        <div class="message"></div>
+
+                        <div class="detalle_btn">
+                            <a href="#" id="btn_dir">Agregar dirección</a>
+                        </div>
+                        <div class="detalle__sitio">
+                            <div class="container_ubicacion">
+                                <div class="detalles__ubicacion">
+                                    <div class="mapa" id="geocode">
+                                        <div id="map"></div>
+                                        <div id="panel"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detalle__sitio boton_form">
+                            <div class="detalle__sitio boton_form">
+                                <a id="btn_regresar">Regresar</a>
+                            </div>
+                            <div class="detalle__sitio boton_form">
+                                <input type="submit" value="Enviar" class="btn__form" id="btn_enviar" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!--WHATSAPP BUTTON-->
+        <div class="nav-bottom">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <div class="popup-whatsapp fadeIn">
+                <div class="content-whatsapp -top">
+                    <button type="button" class="closePopup">
+                        <i class="material-icons icon-font-color">close</i>
+                    </button>
+                    <p> <img src="{{ url_for('static', filename='img/logo_Emprenesy.png') }}" width="35"
+                            id="image-whatssap">
+                        Hola, ¿cómo podemos ayudate? </p>
+                </div>
+
+                <div class="content-whatsapp -bottom">
+                    <input class="whats-input" id="whats-in" type="text" Placeholder="Enviar mensaje..." />
+                    <button class="send-msPopup" id="send-btn" type="button">
+                        <i class="material-icons icon-font-color--black">send</i>
+                    </button>
+                </div>
+
+            </div>
+
+            <button type="button" id="whats-openPopup" class="whatsapp-button">
+                <div class="float">
+                    <i class="fa fa-whatsapp my-float"></i>
+                </div>
+            </button>
+
+            <div class="circle-anime"></div>
+        </div>
+        <div id="form_url">
+            <a id="index" data-url="{{ url_for('admin.index_admin') }}" style="display: none;"></a>
+            <a id="form_evento" data-url="{{ url_for('evento.editarEvento', id=evento_id) }}"
+                style="display: none;"></a>
+
+
+        </div>
+
+        <div id="data-container" data-perfil-url="{{ url_for('admin.perfil_admin') }}" data-admin-id="{{ admin_id }}"
+            style="display: none;"></div>
+
+        <div id="url" style="display: none;">
+            <a id="url_dash" data-url="{{ url_for('admin.index_admin') }}"></a>
+            <a id="url_editarPerfil" data-url="{{ url_for('admin.editarPerfilAdmin', id=admin_id) }}"></a>
+            <a id="url_cerrarSesion" data-url="{{url_for('usuarios.logout')}}"></a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="principal_footer">
+            <div>
+                <svg class="olas" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="vector-olas"
+                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="efecto">
+                        <use xlink:href="#vector-olas" x="48" y="7" fill="#3d77ba" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+        <div class="contenedor_footer">
+            <div class="contenedor_content">
+                <div class="contenedor_list">
+                    <ul class="footer_list">
+                        <li>Preguntas Frecuentes</li>
+                        <li>Términos y Condiciones</li>
+                    </ul>
+                </div>
+
+                <div class="contenedor_list2">
+                    <ul class="footer_list">
+                        <li>Contáctenos</li>
+                        <li>Nosotros</li>
+                    </ul>
+                </div>
+
+                <div class="contenedor_list3">
+                    <ul class="footer_list">
+                        <li>Siguenos en</li>
+                        <div class="iconos">
+                            <img src="{{ url_for('static', filename='img/tik-tok.png') }}" alt="tiktok">
+                            <img src="{{ url_for('static', filename='img/facebook.png') }}" alt="facebook">
+                            <img src="{{ url_for('static', filename='img/instagram1.png') }}" alt="instagram">
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <p class="copy">&copy;2024-Emprenesy.Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="/static/js/generales_admin.js"></script>
+    <script src="/static/js/buscadorAdmin.js"></script>
+    <script src="/static/js/editarEvento.js"></script>
+    <script src="/static/js/editarFormUbicacion.js"></script>
+    <script src="/static/js/whattssap.js"></script>
+</body>
+
+</html>
